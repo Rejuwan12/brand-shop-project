@@ -1,13 +1,9 @@
-
-
 const AddProduct = () => {
-    return (
-        <div className="bg-[#F4F3F0] p-24">
+  return (
+    <div className="bg-[#F4F3F0] p-24">
       <div>
-      <h1 className="text-3xl font-bold text-center">Add a Product</h1>
-      <p className="text-center mb-10">
-      Enter your details to Add Product .
-      </p>
+        <h1 className="text-3xl font-bold text-center">Add a Product</h1>
+        <p className="text-center mb-10">Enter your details to Add Product .</p>
       </div>
       <form>
         {/* form name and quantity row */}
@@ -22,7 +18,6 @@ const AddProduct = () => {
                 name="name"
                 placeholder="Name"
                 className="input input-bordered w-full"
-                
               />
             </label>
           </div>
@@ -49,13 +44,18 @@ const AddProduct = () => {
               <span className="label-text font-semibold">Type</span>
             </label>
             <label className="input-group">
-              <input
-                type="text"
-                name="supplier"
-                placeholder="Type"
-                className="input input-bordered w-full"
-                
-              />
+              <select
+                name="cars"
+                id="cars"
+                className=" input input-bordered w-full"
+              >
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Shirt">Shirt</option>
+                <option value="Pant">Pant</option>
+                <option value="Burka">Burka</option>
+                <option value="Panjabi">Panjabi</option>
+                <option value="Jubbah"> White Jubbah</option>
+              </select>
             </label>
           </div>
           <div className="form-control md:w-1/2">
@@ -79,13 +79,20 @@ const AddProduct = () => {
               <span className="label-text font-semibold">Rating</span>
             </label>
             <label className="input-group">
-              <input
+
+            <div className="rating input input-bordered w-full">
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+  <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+</div>
+              {/* <input
                 type="text"
                 name="category"
                 placeholder="Rating"
                 className="input input-bordered w-full"
-                
-              />
+              /> */}
             </label>
           </div>
           <div className="form-control md:w-1/2">
@@ -119,10 +126,14 @@ const AddProduct = () => {
             </label>
           </div>
         </div>
-       <input type="submit" value='Add Product'  className="btn btn-block bg-black border-none text-white"/>
+        <input
+          type="submit"
+          value="Add Product"
+          className="btn btn-block bg-black border-none text-white"
+        />
       </form>
     </div>
-    );
+  );
 };
 
 export default AddProduct;
