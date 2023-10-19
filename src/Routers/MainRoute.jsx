@@ -8,6 +8,7 @@ import AddProduct from "../components/AddProduct/AddProduct";
 import MyCart from "../components/MyCart/MyCart";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import BrandsCards from "../components/BrandsCards/BrandsCards";
+import ProductDetails from "../components/Details/ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -33,13 +34,21 @@ const router = createBrowserRouter([
         },
         {
             path: '/myCart',
-            element: <PrivateRoute><MyCart/></PrivateRoute>
+            element: <PrivateRoute><MyCart/></PrivateRoute>,
+            loader: () => fetch('http://localhost:5000/cart')
         },
         {
           path: '/brands/:id',
           element:<BrandsCards/>,
           loader: () => fetch('/fashion.json')
+        },
+        {
+          path: '/brand/:id',
+          element:<ProductDetails/>,
+          loader: ({params}) => 
+          fetch(`http://localhost:5000/products/${params.id}`)
         }
+
     ]
     },
   ]);

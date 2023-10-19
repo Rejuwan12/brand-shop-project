@@ -1,12 +1,23 @@
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import Product from "./Product";
 
 
 const BrandsCards = () => {
   const data = useLoaderData();
+  const [products, setProducts] = useState([]);
   const { id } = useParams();
   const brandData = data.find((brand) => brand.id == id);
 
-  console.log(brandData);
+  useEffect(() => {
+    fetch(`http://localhost:5000/products`)
+        .then(res => res.json())
+        .then(data => setProducts(data))
+}, [])
+
+const brandProducts = products.filter(brandProduct => brandProduct.brand == brandData.title)
+    // console.log(brandProducts);
+  
   return (
     <div>
       <div className="carousel w-full">
@@ -52,8 +63,12 @@ const BrandsCards = () => {
               ❯
             </a>
           </div>
-        </div>
-        
+        </div>       
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 py-2 mx-auto p-2">
+        {
+          brandProducts.map(product => <Product key={product._id} product={product}/>)
+        }
       </div>
     </div>
   );
