@@ -4,6 +4,7 @@ const Cards = ({ card }) => {
   const {id, image, title } = card;
   console.log(image);
   return (
+  <>
     <Link to={`/brands/${id}`}>
       <div className="card card-compact bg-base-100 shadow-xl mb-4">
         <figure>
@@ -14,6 +15,11 @@ const Cards = ({ card }) => {
         </div>
       </div>
     </Link>
+
+    
+  </>
+     
+  
   );
 };
 
