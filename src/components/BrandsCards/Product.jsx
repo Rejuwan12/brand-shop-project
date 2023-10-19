@@ -24,7 +24,9 @@ const Product = ({product}) => {
      <Link to={`/brand/${_id}`}>
      <button className="btn btn-block">Details</button>
      </Link>
+     <Link to={`/update/${_id}`}>
      <button className="btn btn-block">Update</button>
+     </Link>
   </div>
 </div>
         </div>

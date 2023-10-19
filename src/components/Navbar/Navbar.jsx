@@ -41,7 +41,7 @@ const Navbar = () => {
     <img className="w-[80px]" src={logo} alt="" />
    </div>
    <div>
-   <a className=" normal-case text-4xl font-bold"> Halal Fashion</a>
+   <a className=" normal-case text-4xl font-bold">Fashion Show</a>
    </div>
     </div>
     </Link>
