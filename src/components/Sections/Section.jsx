@@ -8,7 +8,7 @@ const Section = () => {
         </div>
 
         <div>
-        <h1 className="text-4xl font-bold mb-4 text-center"> Free Delivery</h1>
+        <h1 className="text-4xl font-bold mb-4 text-center "> Free Delivery</h1>
         </div>
         
         </>
