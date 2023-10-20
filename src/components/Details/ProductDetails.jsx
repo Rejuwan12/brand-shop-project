@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const { name,photo,details,price } = productDetails;
 
   useEffect(() => {
-    fetch('http://localhost:5000/cart')
+    fetch('https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/cart')
         .then(res => res.json())
         .then(data => setMyCartCards(data))
 }, [myCartCards])
@@ -17,7 +17,7 @@ const ProductDetails = () => {
     const getMyCartCards = myCartCards || []
     const isExist = getMyCartCards.find(cartCard => cartCard._id === productDetails._id)
     if (!isExist) {
-        fetch('http://localhost:5000/cart', {
+        fetch('https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/cart', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

@@ -24,7 +24,7 @@ const AddProduct = () => {
     }
     console.log(newProduct);
     // send data to the server\\
-    fetch('http://localhost:5000/products',{
+    fetch('https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products',{
       method: 'POST',
       headers:{
         'content-type': 'application/json'

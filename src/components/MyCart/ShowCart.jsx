@@ -12,7 +12,7 @@ const Cart = ({ cart }) => {
   const { name, photo, price, brand, _id, type, rating } = cart;
 
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/cart/${_id}`, {
+    fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/cart/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -10,7 +10,7 @@ const BrandsCards = () => {
   const brandData = data.find((brand) => brand.id == id);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products`)
         .then(res => res.json())
         .then(data => setProducts(data))
 }, [])

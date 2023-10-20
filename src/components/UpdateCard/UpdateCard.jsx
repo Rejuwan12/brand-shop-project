@@ -30,7 +30,7 @@ const UpdateCard = () => {
     }
   
     // send data to the server\\
-    fetch(`http://localhost:5000/products/${_id}`,{
+    fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products/${_id}`,{
       method: 'PUT',
       headers:{
         'content-type': 'application/json'
