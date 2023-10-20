@@ -43,10 +43,10 @@ const UpdateCard = () => {
       if(data.modifiedCount > 0){
         Swal.fire(
             {
-            title: "success",
-            text: "successfully",
+            title: "Updated",
+            text: "Update Successfully",
             icon: "success",
-            confirmButtonText: "cool"
+            confirmButtonText: "Done"
             }
           )}
 

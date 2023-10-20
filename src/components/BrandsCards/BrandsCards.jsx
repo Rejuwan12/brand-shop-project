@@ -16,7 +16,7 @@ const BrandsCards = () => {
 }, [])
 
 const brandProducts = products.filter(brandProduct => brandProduct.brand == brandData.title)
-    // console.log(brandProducts);
+    
   
   return (
     <div>

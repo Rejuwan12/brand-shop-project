@@ -10,11 +10,13 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import BrandsCards from "../components/BrandsCards/BrandsCards";
 import ProductDetails from "../components/Details/ProductDetails";
 import UpdateCard from "../components/UpdateCard/UpdateCard";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout/>,
+      errorElement: <ErrorPage/>,
       children:[
         {
        path:'/',

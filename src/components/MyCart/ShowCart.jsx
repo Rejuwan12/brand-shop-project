@@ -1,48 +1,31 @@
-
-
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 import Swal from "sweetalert2";
-import { Rating } from '@smastrom/react-rating'
+import { Rating } from "@smastrom/react-rating";
 
-import '@smastrom/react-rating/style.css'
+import "@smastrom/react-rating/style.css";
 
 const Cart = ({ cart }) => {
-  const {
-    name,
-    photo,
-    price,
-    brand,
-    _id,
-    type,  
-    rating,
-    
-    
-  } = cart;
+  const { name, photo, price, brand, _id, type, rating } = cart;
 
   const handleDelete = (_id) => {
-    fetch(
-      `http://localhost:5000/cart/${_id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5000/cart/${_id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.deletedCount > 0) {
-          Swal.fire(
-            {
+          Swal.fire({
             title: "Delete",
-            text: "deleted successfully",
+            text: "Deleted successfully",
             icon: "question",
-            confirmButtonText: "cool"
-            })
+            confirmButtonText: "Done",
+          });
         }
-        // navigate("/");
       });
   };
 
@@ -64,19 +47,25 @@ const Cart = ({ cart }) => {
               <p className="font-medium">Type: {type}</p>
               <div className="">
                 <p className="font-medium">
-                  Price <span className="text-red-500">${price}</span>
+                  Price <span className="text-red-400">{price}</span>
                 </p>
                 <p className=" font-medium flex items-center">
-                Rating: <span className="text-blue-500"> {rating}</span>
-                <span><Rating style={{ maxWidth: 100 }} readOnly halfFillMode='svg' value={rating < 4.5 ? Math.floor(rating) : rating} /></span>
-                  
+                  Rating: <span className="text-blue-500"> {rating}</span>
+                  <span>
+                    <Rating
+                      style={{ maxWidth: 100 }}
+                      readOnly
+                      halfFillMode="svg"
+                      value={rating < 4.5 ? Math.floor(rating) : rating}
+                    />
+                  </span>
                 </p>
-               </div>
-           </div>
-<div className="flex flex-col justify-around items-center">
+              </div>
+            </div>
+            <div className="flex flex-col justify-around items-center">
               <Link>
                 <div
-                  className="badge badge-outline bg-blue-500 h-8 border-none rounded-md w-20 text-2xl"
+                  className="badge badge-outline bg-[#e8260c] h-8 border-none rounded-md w-20 text-2xl"
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content="Delete!"
                   onClick={() => handleDelete(_id)}
@@ -87,7 +76,7 @@ const Cart = ({ cart }) => {
               <Tooltip id="my-tooltip" />
               <Link to={`/brand/${_id}`}>
                 <div
-                  className="badge badge-outline bg-amber-500 h-8 border-none rounded-md w-20 text-2xl"
+                  className="badge badge-outline bg-[#42922f] h-8 border-none rounded-md w-20 text-2xl"
                   data-tooltip-id="my-tooltip"
                   data-tooltip-content="View Details!"
                 >
