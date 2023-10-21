@@ -9,3 +9,7 @@
 * Clicking on some routes in the navbar will not allow you to access them unless you are logged in to the website
 
 * If you click on the card, it will be shown in the form of card details. And from there on clicking on the Add to Cart button the added and card is saved on the my Cart page.
+
+# Live Link 
+
+* https://fashion-projects-e03e5.web.app

@@ -5,12 +5,13 @@ import Product from "./Product";
 
 const BrandsCards = () => {
   const data = useLoaderData();
-  const [products, setProducts] = useState([]);
   const { id } = useParams();
   const brandData = data.find((brand) => brand.id == id);
+  
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products`)
+    fetch(`https://fashion-project-server.vercel.app/products`)
         .then(res => res.json())
         .then(data => setProducts(data))
 }, [])

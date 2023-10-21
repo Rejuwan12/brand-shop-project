@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         {
             path: '/myCart',
             element: <PrivateRoute><MyCart/></PrivateRoute>,
-            loader: () => fetch('https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/cart')
+            loader: () => fetch('https://fashion-project-server.vercel.app/cart')
         },
         {
           path: '/brands/:id',
@@ -49,13 +49,13 @@ const router = createBrowserRouter([
           path: '/brand/:id',
           element:<ProductDetails/>,
           loader: ({params}) => 
-          fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products/${params.id}`)
+          fetch(`https://fashion-project-server.vercel.app/products/${params.id}`)
         },
         {
           path:'/update/:id',
           element:<UpdateCard/>,
           loader: ({params}) => 
-          fetch(`https://fashion-project-server-i89a7jwaj-rejuwan12.vercel.app/products/${params.id}`)
+          fetch(`https://fashion-project-server.vercel.app/products/${params.id}`)
         }
 
     ]
